@@ -5,7 +5,7 @@ public class SoundExchange {
     public static void main(String[] args) {
         
         StreamsByDate streamsByDate = new StreamsByDate();
-        ReportingDate june7 = new ReportingDate("2021-06-07");
+        //ReportingDate june7 = new ReportingDate("2021-06-07");
         
         try (Scanner scanner = new Scanner(Paths.get("sample_data.txt")).useDelimiter("\\t|\\n")) {
 
@@ -26,16 +26,15 @@ public class SoundExchange {
                 //System.out.println(streamObject);
                 streamsByDate.addStream(streamObject);
 
-                june7.addStream(streamObject);
+                //june7.addStream(streamObject);
 
             }
 
-            //System.out.println(streamsByDate);
-            System.out.println(june7.size());
-            june7.printStreams();
+            streamsByDate.printAllStreams();
+            
         
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
-        } 
+        }
     }
 }

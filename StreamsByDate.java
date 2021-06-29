@@ -44,6 +44,12 @@ public class StreamsByDate {
         return streamsByDate.isEmpty();
     }
 
+    public void printAllStreams() {
+        for (ReportingDate reportingDate: streamsByDate) {
+            reportingDate.printStreams();
+        }
+    }
+
     public String toString() {
         return streamsByDate.toString();
     }
