@@ -3,6 +3,8 @@ import java.nio.file.Paths;
 
 public class SoundExchange {
     public static void main(String[] args) {
+        
+        
         try (Scanner scanner = new Scanner(Paths.get("sample_data.txt")).useDelimiter("\\t|\\n")) {
 
             // we read the file until all lines have been read
@@ -18,11 +20,11 @@ public class SoundExchange {
                 String status = scanner.next();
                 String referrer = scanner.next();
                 
-                PlayedSong playedSong = new PlayedSong(ipAddress, date, time, stream, duration, status, referrer);
-                System.out.println(playedSong);
+                WAMUStream streamObject = new WAMUStream(ipAddress, date, time, stream, duration, status, referrer);
 
 
             }
+        
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         } 

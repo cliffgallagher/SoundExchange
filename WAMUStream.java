@@ -1,4 +1,4 @@
-public class PlayedSong {
+public class WAMUStream {
     private String ipAddress;
     private String date;
     private String time;
@@ -7,7 +7,7 @@ public class PlayedSong {
     private String status;
     private String referrer;
 
-    public PlayedSong(String ipAddress, String date, String time, String stream, String duration, String status, String referrer) {
+    public WAMUStream(String ipAddress, String date, String time, String stream, String duration, String status, String referrer) {
         this.ipAddress = ipAddress;
         this.date = date;
         this.time = time;
