@@ -36,7 +36,9 @@ public class ReportingDate {
     public void printStreams() {
         try {
             PrintWriter writer = new PrintWriter("output.txt");
-            writer.println("Hello world");
+            for (WAMUStream stream: streams) {
+                writer.print(stream);
+            }
             writer.close();
         } catch (Exception e) {
             System.out.println(e);
