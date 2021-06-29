@@ -1,6 +1,6 @@
 import java.time.LocalTime;
 
-public class TimeForSort {
+public class TimeForSort implements Comparable<TimeForSort>{
 
     private int hours;
     private int minutes;
@@ -17,6 +17,11 @@ public class TimeForSort {
 
     public LocalTime getTimeForSort() {
         return timeForSort;
+    }
+
+    @Override
+    public int compareTo(TimeForSort other) {
+        return timeForSort.compareTo(other.timeForSort);
     }
 
     public String toString() {

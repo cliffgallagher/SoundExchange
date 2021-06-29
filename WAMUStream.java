@@ -1,4 +1,4 @@
-public class WAMUStream {
+public class WAMUStream implements Comparable<WAMUStream> {
     private String ipAddress;
     private String date;
     private String time;
@@ -29,6 +29,11 @@ public class WAMUStream {
 
     public TimeForSort getTimeForSort() {
         return this.timeForSort;
+    }
+
+    @Override
+    public int compareTo(WAMUStream other) {
+        return getTimeForSort().compareTo(other.getTimeForSort());
     }
 
     public String toString() {

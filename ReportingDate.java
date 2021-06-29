@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.io.File;
 import java.io.PrintWriter;
 
@@ -32,6 +33,10 @@ public class ReportingDate {
 
     public String toString() {
         return streams.toString();
+    }
+
+    public void sort() {
+        Collections.sort(streams);
     }
 
     public void printStreams() {

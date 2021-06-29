@@ -31,6 +31,8 @@ public class SoundExchange {
 
             }
 
+            streamsByDate.sortAllStreams();
+
             streamsByDate.printAllStreams();
             
         

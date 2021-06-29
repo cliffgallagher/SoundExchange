@@ -44,6 +44,12 @@ public class StreamsByDate {
         return streamsByDate.isEmpty();
     }
 
+    public void sortAllStreams() {
+        for (ReportingDate reportingDate: streamsByDate) {
+            reportingDate.sort();
+        }
+    }
+    
     public void printAllStreams() {
         for (ReportingDate reportingDate: streamsByDate) {
             reportingDate.printStreams();
