@@ -1,9 +1,8 @@
-import java.time.LocalTime;
-
 public class WAMUStream {
     private String ipAddress;
     private String date;
     private String time;
+    private TimeForSort timeForSort;
     private String stream;
     private String duration;
     private String status;
@@ -13,6 +12,7 @@ public class WAMUStream {
         this.ipAddress = ipAddress;
         this.date = date;
         this.time = time;
+        this.timeForSort = new TimeForSort(this.time);
         this.stream = stream;
         this.duration = duration;
         this.status = status;
@@ -25,6 +25,10 @@ public class WAMUStream {
 
     public String getReferrer() {
         return this.referrer;
+    }
+
+    public TimeForSort getTimeForSort() {
+        return this.timeForSort;
     }
 
     public String toString() {

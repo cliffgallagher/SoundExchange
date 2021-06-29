@@ -27,6 +27,7 @@ public class SoundExchange {
                 streamsByDate.addStream(streamObject);
 
                 //june7.addStream(streamObject);
+                //System.out.println("time: " + time + ", time for sort: " + streamObject.getTimeForSort());
 
             }
 
