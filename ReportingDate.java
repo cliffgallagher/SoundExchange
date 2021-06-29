@@ -42,7 +42,7 @@ public class ReportingDate {
             }
             File printedStreams = new File("./Output Log Files/" + getDate() + ".txt");
             printedStreams.createNewFile();
-            PrintWriter writer = new PrintWriter("output.txt");
+            PrintWriter writer = new PrintWriter(printedStreams);
             for (WAMUStream stream: streams) {
                 writer.print(stream);
             }
