@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.io.File;
 import java.io.PrintWriter;
 
 public class ReportingDate {
@@ -35,6 +36,12 @@ public class ReportingDate {
 
     public void printStreams() {
         try {
+            File outputLogFiles = new File("./Output Log Files");
+            if (!outputLogFiles.exists()) {
+                outputLogFiles.mkdir();
+            }
+            File printedStreams = new File("./Output Log Files/" + getDate() + ".txt");
+            printedStreams.createNewFile();
             PrintWriter writer = new PrintWriter("output.txt");
             for (WAMUStream stream: streams) {
                 writer.print(stream);
