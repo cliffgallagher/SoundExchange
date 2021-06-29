@@ -1,3 +1,5 @@
+import java.time.LocalTime;
+
 public class WAMUStream {
     private String ipAddress;
     private String date;
