@@ -26,11 +26,13 @@ public class SoundExchange {
                 //System.out.println(streamObject);
                 streamsByDate.addStream(streamObject);
 
-                //june7.addStream(streamObject);
+                june7.addStream(streamObject);
 
             }
 
-            System.out.println(streamsByDate);
+            //System.out.println(streamsByDate);
+            System.out.println(june7.size());
+            june7.printStreams();
         
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());

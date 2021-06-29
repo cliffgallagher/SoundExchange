@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.io.PrintWriter;
 
 public class ReportingDate {
     
@@ -30,6 +31,16 @@ public class ReportingDate {
 
     public String toString() {
         return streams.toString();
+    }
+
+    public void printStreams() {
+        try {
+            PrintWriter writer = new PrintWriter("output.txt");
+            writer.println("Hello world");
+            writer.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
 }
