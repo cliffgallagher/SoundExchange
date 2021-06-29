@@ -17,6 +17,10 @@ public class WAMUStream {
         this.referrer = referrer;
     }
 
+    public String getDate() {
+        return this.date;
+    }
+
     public String getReferrer() {
         return this.referrer;
     }

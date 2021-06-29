@@ -4,6 +4,8 @@ import java.nio.file.Paths;
 public class SoundExchange {
     public static void main(String[] args) {
         
+        StreamsByDate streamsByDate = new StreamsByDate();
+        ReportingDate june7 = new ReportingDate("2021-06-07");
         
         try (Scanner scanner = new Scanner(Paths.get("sample_data.txt")).useDelimiter("\\t|\\n")) {
 
@@ -21,9 +23,14 @@ public class SoundExchange {
                 String referrer = scanner.next();
                 
                 WAMUStream streamObject = new WAMUStream(ipAddress, date, time, stream, duration, status, referrer);
+                //System.out.println(streamObject);
+                streamsByDate.addStream(streamObject);
 
+                //june7.addStream(streamObject);
 
             }
+
+            System.out.println(streamsByDate);
         
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());

@@ -18,8 +18,18 @@ public class ReportingDate {
         return this.date;
     }
 
-    public void addStream() {
-        
+    public void addStream(WAMUStream wamuStream) {
+        if (this.date.equals(wamuStream.getDate())) {
+            streams.add(wamuStream);
+        }       
+    }
+
+    public int size() {
+        return streams.size();
+    }
+
+    public String toString() {
+        return streams.toString();
     }
 
 }
