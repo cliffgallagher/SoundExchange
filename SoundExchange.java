@@ -4,7 +4,8 @@ import java.nio.file.Paths;
 public class SoundExchange {
     public static void main(String[] args) {
         
-        StreamsByDate streamsByDate = new StreamsByDate();
+        StreamPrinter.createPrintedUnsortedDirectory();
+        //StreamsByDate streamsByDate = new StreamsByDate();
         
         try (Scanner scanner = new Scanner(Paths.get("streaming_data_first_quarter.csv")).useDelimiter("\\t|\\n")) {
 
@@ -19,7 +20,7 @@ public class SoundExchange {
                 String referrer = scanner.next();
                 
                 WAMUStream streamObject = new WAMUStream(ipAddress, date, time, stream, duration, status, referrer);
-                StreamPrinter.printStream(streamObject);
+                StreamPrinter.createOutputFiles(streamObject);
 
             }
 

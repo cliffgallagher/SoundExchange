@@ -5,13 +5,14 @@ public class StreamPrinter {
 
     public StreamPrinter() {}
 
-    public static void printStream(WAMUStream stream) {
+    public static void createOutputFiles(WAMUStream stream) {
         try {
+
+            File printedStreamsAM = new File("./PrintedUnsortedStreamLogs/" + stream.getDate() + "_AM.txt");
+            File printedStreamsPM = new File("./PrintedUnsortedStreamLogs/" + stream.getDate() + "_PM.txt");
             
-            File printedUnsortedStreamsDirectory = new File("./PrintedUnsortedStreamLogs");
-            if (!printedUnsortedStreamsDirectory.exists()) {
-                printedUnsortedStreamsDirectory.mkdir();
-            }
+            printedStreamsAM.createNewFile();
+            printedStreamsPM.createNewFile();
             
             /*File outputLogFiles = new File("./Output Log Files");
             if (!outputLogFiles.exists()) {
@@ -24,6 +25,18 @@ public class StreamPrinter {
                 writer.println(stream);
             }
             writer.close();*/
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public static void createPrintedUnsortedDirectory() {
+        try {
+            File printedUnsortedStreamsDirectory = new File("./PrintedUnsortedStreamLogs");
+        
+            if (!printedUnsortedStreamsDirectory.exists()) {
+                printedUnsortedStreamsDirectory.mkdir();
+            }
         } catch (Exception e) {
             System.out.println(e);
         }
