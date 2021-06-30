@@ -20,7 +20,9 @@ public class SoundExchange {
                 String referrer = scanner.next();
                 
                 WAMUStream streamObject = new WAMUStream(ipAddress, date, time, stream, duration, status, referrer);
+
                 StreamPrinter.createOutputFiles(streamObject);
+                StreamPrinter.printStream(streamObject);
 
             }
 

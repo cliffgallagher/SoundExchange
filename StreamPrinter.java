@@ -1,5 +1,8 @@
 import java.io.File;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
 import java.io.PrintWriter;
+import java.time.LocalTime;
 
 public class StreamPrinter {
 
@@ -39,6 +42,33 @@ public class StreamPrinter {
             }
         } catch (Exception e) {
             System.out.println(e);
+        }
+    }
+
+    public static void printStream(WAMUStream stream) {
+        LocalTime noon = LocalTime.NOON;
+        if (stream.getTimeForSort().getTimeForSort().compareTo(noon) < 0) {
+            try {
+                File printedStreamDestination = new File("./PrintedUnsortedStreamLogs/" + stream.getDate() + "_AM.txt");
+                FileWriter fileWriter = new FileWriter(printedStreamDestination, true);
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                PrintWriter printWriter = new PrintWriter(bufferedWriter);
+                printWriter.println(stream);
+                printWriter.close();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        } else {
+            try {
+                File printedStreamDestination = new File("./PrintedUnsortedStreamLogs/" + stream.getDate() + "_PM.txt");
+                FileWriter fileWriter = new FileWriter(printedStreamDestination, true);
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                PrintWriter printWriter = new PrintWriter(bufferedWriter);
+                printWriter.println(stream);
+                printWriter.close();
+            } catch (Exception e) {
+                System.out.println(e);
+            }   
         }
     }
     
