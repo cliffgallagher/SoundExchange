@@ -4,10 +4,10 @@ import java.nio.file.Paths;
 public class SoundExchange {
     public static void main(String[] args) {
         
-        StreamPrinter.createPrintedUnsortedDirectory();
+        /*StreamPrinter.createPrintedUnsortedDirectory();
         //StreamsByDate streamsByDate = new StreamsByDate();
         
-        try (Scanner scanner = new Scanner(Paths.get("streaming_data_first_quarter.csv")).useDelimiter("\\t|\\n")) {
+        try (Scanner scanner = new Scanner(Paths.get("streaming_data.csv")).useDelimiter("\\t|\\n")) {
 
             while (scanner.hasNextLine()) {
                 
@@ -32,6 +32,8 @@ public class SoundExchange {
         
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
+
+        TimeSorter.createPrintedSortedDirectory();
     }
 }
