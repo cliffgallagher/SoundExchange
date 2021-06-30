@@ -50,7 +50,6 @@ public class ReportingDate {
             PrintWriter writer = new PrintWriter(printedStreams);
             for (WAMUStream stream: streams) {
                 writer.println(stream);
-                System.out.println(stream);
             }
             writer.close();
         } catch (Exception e) {

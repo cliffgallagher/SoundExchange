@@ -23,8 +23,6 @@ public class SoundExchange {
 
             }
 
-            System.out.println("all added");
-
             streamsByDate.sortAllStreams();
             streamsByDate.printAllStreams();
             
