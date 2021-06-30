@@ -35,5 +35,9 @@ public class SoundExchange {
         }*/
 
         TimeSorter.createPrintedSortedDirectory();
+
+        TimeSorter sorter = new TimeSorter();
+        
+
     }
 }
