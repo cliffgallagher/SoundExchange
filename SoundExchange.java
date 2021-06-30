@@ -19,12 +19,12 @@ public class SoundExchange {
                 String referrer = scanner.next();
                 
                 WAMUStream streamObject = new WAMUStream(ipAddress, date, time, stream, duration, status, referrer);
-                streamsByDate.addStream(streamObject);
+                StreamPrinter.printStream(streamObject);
 
             }
 
             //streamsByDate.sortAllStreams();
-            streamsByDate.printAllStreams();
+            //streamsByDate.printAllStreams();
             
         
         } catch (Exception e) {
