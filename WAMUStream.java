@@ -38,6 +38,7 @@ public class WAMUStream implements Comparable<WAMUStream> {
 
     public String toString() {
         //return "ipAddress: " + ipAddress + ", date: " + date + ", time: " + time + ", stream: " + stream + ", duration: " + duration + ", status: " + status + ", referrer: " + referrer;
-        return ipAddress + "\t" + date + "\t" + time + "\t" + stream + "\t" + duration + "\t" + status + "\t" + referrer; 
+        String returnString = ipAddress + "\t" + date + "\t" + time + "\t" + stream + "\t" + duration + "\t" + status + "\t" + referrer;
+        return returnString.trim(); 
     }
 }
