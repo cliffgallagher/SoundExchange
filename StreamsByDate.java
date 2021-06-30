@@ -13,13 +13,9 @@ public class StreamsByDate {
     }
 
     public void addStream(WAMUStream streamObject) {
-        if (containsCorrespondingReportingDate(streamObject)) {
-            for (ReportingDate list: streamsByDate) {
-                if (streamObject.getDate().equals(list.getDate())) {
-                    list.addStream(streamObject);
-                    break;
-                }
-            }      
+        int reportingDateIndex = containsCorrespondingReportingDate(streamObject);
+        if (reportingDateIndex > -1) { 
+            streamsByDate.get(reportingDateIndex).addStream(streamObject);      
         } else {
             ReportingDate newReportingDate = new ReportingDate(streamObject.getDate());
             newReportingDate.addStream(streamObject);
@@ -27,17 +23,18 @@ public class StreamsByDate {
         }
     }
     
-    public boolean containsCorrespondingReportingDate(WAMUStream streamObject) {
-        
-        boolean containsReportingDate = false;
+    public int containsCorrespondingReportingDate(WAMUStream streamObject) {
+
+        int reportingDateIndex = -1;
         for (ReportingDate list: streamsByDate) {
             if (streamObject.getDate().equals(list.getDate())) {
-                containsReportingDate = true;
+                reportingDateIndex = streamsByDate.indexOf(list);
                 break;
             }
         }
 
-        return containsReportingDate;
+        return reportingDateIndex;
+
     }
 
     public boolean isEmpty() {
