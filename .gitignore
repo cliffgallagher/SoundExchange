@@ -1,7 +1,2 @@
-NO_EXCEL_backup_streaming_data.csv
-streaming_data.csv
-sample_data.txt
-sample_data_Copy.txt
-output.txt
-Output Log Files/
-some_streaming_data.txt
+*.csv
+*.txt

@@ -6,7 +6,7 @@ public class SoundExchange {
         
         StreamsByDate streamsByDate = new StreamsByDate();
         
-        try (Scanner scanner = new Scanner(Paths.get("streaming_data.csv")).useDelimiter("\\t|\\n")) {
+        try (Scanner scanner = new Scanner(Paths.get("streaming_data_first_quarter.csv")).useDelimiter("\\t|\\n")) {
 
             while (scanner.hasNextLine()) {
                 
