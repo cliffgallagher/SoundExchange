@@ -37,6 +37,7 @@ public class SoundExchange {
         TimeSorter.createPrintedSortedDirectory();
 
         TimeSorter sorter = new TimeSorter();
+        sorter.sortByTimeAndPrint("2021-06-07_AM.txt");
         
 
     }
