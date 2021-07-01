@@ -3,10 +3,11 @@ import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.io.PrintWriter;
 import java.time.LocalTime;
+import java.util.Scanner;
 
-public class StreamPrinter {
+public class DaySorter {
 
-    public StreamPrinter() {}
+    public DaySorter() {}
 
     public static void createOutputFiles(WAMUStream stream) {
         try {
@@ -17,17 +18,6 @@ public class StreamPrinter {
             printedStreamsAM.createNewFile();
             printedStreamsPM.createNewFile();
             
-            /*File outputLogFiles = new File("./Output Log Files");
-            if (!outputLogFiles.exists()) {
-                outputLogFiles.mkdir();
-            }
-            File printedStreams = new File("./Output Log Files/" + getDate() + ".txt");
-            printedStreams.createNewFile();
-            PrintWriter writer = new PrintWriter(printedStreams);
-            for (WAMUStream stream: streams) {
-                writer.println(stream);
-            }
-            writer.close();*/
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -69,6 +59,32 @@ public class StreamPrinter {
             } catch (Exception e) {
                 System.out.println(e);
             }   
+        }
+    }
+
+    public static void createArrayList(String fileName) {
+        try (Scanner scanner = new Scanner(Paths.get(fileName)).useDelimiter("\\t|\\n")) {
+
+            while (scanner.hasNextLine()) {
+                
+                String ipAddress = scanner.next();
+                String date = scanner.next();
+                String time = scanner.next();
+                String stream = scanner.next();
+                String duration = scanner.next();
+                String status = scanner.next();
+                String referrer = scanner.next();
+                
+                WAMUStream streamObject = new WAMUStream(ipAddress, date, time, stream, duration, status, referrer);
+
+                DaySorter.createOutputFiles(streamObject);
+                DaySorter.printStream(streamObject);
+
+            }
+            
+        
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
     
