@@ -9,7 +9,6 @@ public class SoundExchange {
         */
 
         /*StreamPrinter.createPrintedUnsortedDirectory();
-        //StreamsByDate streamsByDate = new StreamsByDate();
         
         try (Scanner scanner = new Scanner(Paths.get("streaming_data.csv")).useDelimiter("\\t|\\n")) {
 
@@ -29,9 +28,6 @@ public class SoundExchange {
                 StreamPrinter.printStream(streamObject);
 
             }
-
-            //streamsByDate.sortAllStreams();
-            //streamsByDate.printAllStreams();
             
         
         } catch (Exception e) {
