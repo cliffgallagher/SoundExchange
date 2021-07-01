@@ -39,6 +39,7 @@ public class TimeSorter {
             FileWriter fileWriter = new FileWriter(logSortedByTime);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             PrintWriter printWriter = new PrintWriter(bufferedWriter);
+            printWriter.println("IP address" + "\t" + "Date" + "\t" + "Time" + "\t" + "Stream" + "\t" + "Duration" + "\t" + "Status" + "\t" + "Referrer")
             for (WAMUStream stream: streams) {
                 printWriter.println(stream);
             }

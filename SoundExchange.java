@@ -13,10 +13,12 @@ public class SoundExchange {
         /*
             You should have generated unsorted AM and PM logs for each day, as a result of the first
             two methods.
-            
-            For each unsorted AM or PM log, run:
 
-            Run TimeSorter.createPrintedSortedDirectory as below
+            Run:
+
+            TimeSorter.createPrintedSortedDirectory
+
+            To create the destination file for the sorted logs
 
             Then, create a TimeSorter object for each unsorted AM or PM log, and
             run sortByTimeAndPrint("unsortedAMorPMlog.txt") on each one
