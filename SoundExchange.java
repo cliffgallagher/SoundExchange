@@ -1,5 +1,3 @@
-import java.nio.file.Paths;
-
 public class SoundExchange {
     public static void main(String[] args) {
         

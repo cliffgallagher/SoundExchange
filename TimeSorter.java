@@ -53,7 +53,7 @@ public class TimeSorter {
         Collections.sort(getStreams());
     }
 
-    private static void createArrayList(String fileName) {
+    private void createArrayList(String fileName) {
         String pathForScanner = new String("./PrintedUnsortedStreamLogs/" + fileName);
 
         try (Scanner timeSortScanner = new Scanner(Paths.get(pathForScanner)).useDelimiter("\\t|\\n")) {
