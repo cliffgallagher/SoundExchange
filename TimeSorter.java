@@ -59,7 +59,7 @@ public class TimeSorter {
 
         try (Scanner timeSortScanner = new Scanner(Paths.get(pathForScanner)).useDelimiter("\\t|\\n")) {
 
-            while (timeSortScanner.hasNextLine()) {
+            while (timeSortScanner.hasNext()) {
                 
                 String ipAddress = timeSortScanner.next();
                 String date = timeSortScanner.next();
