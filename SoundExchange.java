@@ -2,11 +2,10 @@ public class SoundExchange {
     public static void main(String[] args) {
         
         /*
-        //Run this block to sort the StreamGuys log by day
+        /   Run this method to sort the StreamGuys log by day.
         */
 
-        DaySorter.createPrintedUnsortedDirectory();
-        DaySorter.createArrayList("filename.txt");
+        DaySorter.parseStreamGuysReport("filename.txt");
         
 
         
