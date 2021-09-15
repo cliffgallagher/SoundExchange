@@ -2,7 +2,7 @@ public class SoundExchange {
     public static void main(String[] args) {
         
         /*
-        /   Run this method to sort the StreamGuys log by day.
+        /   1. Run this method to sort the StreamGuys log by day. Save the StreamGuys log in the top level of the directory that you cloned this git to, and pass the filename as an argument to parseStreamGuysReport().
         */
 
         DaySorter.parseStreamGuysReport("filename.txt");
@@ -10,29 +10,31 @@ public class SoundExchange {
 
         
         /*
-            You should have generated unsorted AM and PM logs for each day, as a result of the first
-            two methods.
-            
-            Comment out the two functions above.
+            2. You should have created 28 files (14 days of reporting for SoundExchange, each split by AM and PM) labeled YYYY-MM-DD_AM.txt and YYYY-MM-DD_PM.txt, sitting in the directory PrintedUnsortedStreamLogs. Those files contain the streams for each day, but unsorted by time.
 
-            Then, run:
+        */
+
+        /*
+
+            3. Run:
 
             TimeSorter.createPrintedSortedDirectory()
 
-            To create the destination file for the sorted logs. This is done in the commented section below.
+            to create the destination file for the stream files that will be sorted by time.
 
-            Then, create a TimeSorter object for each unsorted AM or PM log, and
-            run sortByTimeAndPrint("unsortedAMorPMlog.txt") on each one. An example of this is also given below. I used a for loop to do that more quickly.
+            //TimeSorter.createPrintedSortedDirectory();
+
         */
+
+        /*
+            4.  
+
+            To sort each of the files in PrintedUnsortedStreamLogs by time, you'll need to:
+
+                a. create a TimeSorter object
+                b. call the sortByTimeAndPrint() method on that object, and pass it the filename of one of the 28 files as an argument.
         
-        /*TimeSorter.createPrintedSortedDirectory();
-        
-        for (int i = 10; i < 21; i++) {
-            TimeSorter sorterAM = new TimeSorter();
-            sorterAM.sortByTimeAndPrint("2021-06-" + i + "_AM.txt");
-            TimeSorter sorterPM = new TimeSorter();
-            sorterPM.sortByTimeAndPrint("2021-06-" + i + "_PM.txt");
-        }*/
+        */
         
         
 
