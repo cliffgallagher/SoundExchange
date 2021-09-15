@@ -16,6 +16,9 @@ public class TimeSorter {
         streams = new ArrayList<>();
     }
 
+    /*
+        Creates the PrintedSortedDirectory, where the stream logs sorted by time will populate.
+    */
     public static void createPrintedSortedDirectory() {
         File printedSortedDirectory = new File("./PrintedSortedStreamLogs");
 
@@ -24,7 +27,7 @@ public class TimeSorter {
         }
     }
 
-    public ArrayList<WAMUStream> getStreams() {
+    private ArrayList<WAMUStream> getStreams() {
         return this.streams;
     }
 
@@ -33,6 +36,9 @@ public class TimeSorter {
         printLog(fileName, this.streams);
     }
     
+    /*
+        Helper method for sortByTimeAndPrint(). Loops through the ArrayList of WAMUStream objects in each TimeSorter object, which have previously been sorted by sortStreamLogByTime(), and prints them.
+    */
     private void printLog(String fileName, ArrayList<WAMUStream> list) {
         try {
             File logSortedByTime = new File("./PrintedSortedStreamLogs/" + fileName);
@@ -49,11 +55,17 @@ public class TimeSorter {
         }
     }
     
+    /*
+        Helper method for sortByTimeAndPrint. Uses createArrayList() to create an ArrayList from whichever file in PrintedUnsortedStreamLogs you decide to pass as an argument, and sorts it using Collections.sort().
+    */
     private void sortStreamLogByTime(String fileName) {
         createArrayList(fileName);
         Collections.sort(getStreams());
     }
 
+    /*
+        Helper method for sortStreamLogByTime(). Reads in the stream instances saved in whichever file in the PrintedUnsortedStreamLogs directory you decide to pass as an argument, turns each instance into a WAMUStream object, and adds it to an ArrayList.
+    */
     private void createArrayList(String fileName) {
         String pathForScanner = new String("./PrintedUnsortedStreamLogs/" + fileName);
 
