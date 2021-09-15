@@ -2,7 +2,7 @@ public class SoundExchange {
     public static void main(String[] args) {
         
         /*
-        /   1. Run this method to sort the StreamGuys log by day. Save the StreamGuys log in the top level of the directory that you cloned this git to, and pass the filename as an argument to parseStreamGuysReport().
+        /   1. Run parseStreamGuysReport() to sort the StreamGuys log by day. Save the StreamGuys log in the top level of the directory that you cloned this git to, and pass the filename as an argument to parseStreamGuysReport().
         */
 
         DaySorter.parseStreamGuysReport("filename.txt");
