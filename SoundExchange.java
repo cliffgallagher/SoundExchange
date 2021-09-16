@@ -5,7 +5,7 @@ public class SoundExchange {
         /   1. Run parseStreamGuysReportByDay() to sort the StreamGuys log by day. Save the StreamGuys log in the top level of the directory that you cloned this git to, and pass the filename as an argument to parseStreamGuysReport().
         */
 
-        DaySorter.parseStreamGuysReportByDay("filename.txt");
+        DaySorter.parseStreamGuysReportByDay("NO EXCEL WAMU 2021 Q3 Stream.csv");
         
 
         
