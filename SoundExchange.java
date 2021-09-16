@@ -4,10 +4,10 @@ public class SoundExchange {
     public static void main(String[] args) {
         
         /*
-        /   1. Run parseStreamGuysReportByDay() to sort the StreamGuys log by day. Save the StreamGuys log in the clone you've forked from GitHub, and pass the filename of the StreamGuys log as an argument to parseStreamGuysReport().
+        /   1. Run parseStreamGuysReportByDay() to sort the StreamGuys log by day. Save the StreamGuys log in the clone you've forked from GitHub, and pass the filename of the StreamGuys log as an argument to parseStreamGuysReportByDay().
         */
 
-        DaySorter.parseStreamGuysReportByDay("NO EXCEL WAMU 2021 Q3 Stream.csv");
+        DaySorter.parseStreamGuysReportByDay("filename.csv");
         
 
         
