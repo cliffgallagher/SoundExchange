@@ -1,3 +1,5 @@
+import java.io.File;
+
 public class SoundExchange {
     public static void main(String[] args) {
         
@@ -5,7 +7,7 @@ public class SoundExchange {
         /   1. Run parseStreamGuysReportByDay() to sort the StreamGuys log by day. Save the StreamGuys log in the top level of the directory that you cloned this git to, and pass the filename as an argument to parseStreamGuysReport().
         */
 
-        DaySorter.parseStreamGuysReportByDay("NO EXCEL WAMU 2021 Q3 Stream.csv");
+        //DaySorter.parseStreamGuysReportByDay("NO EXCEL WAMU 2021 Q3 Stream.csv");
         
 
         
@@ -37,6 +39,13 @@ public class SoundExchange {
         
         */
         
+        File printedUnsortedDirectory = new File("./PrintedUnsortedStreamLogs");
+        File[] directoryListing = printedUnsortedDirectory.listFiles();
+
+        for (File file: directoryListing) {
+            TimeSorter sorter = new TimeSorter();
+            sorter.sortByTimeAndPrint(file.getName());
+        }
         
 
     }
