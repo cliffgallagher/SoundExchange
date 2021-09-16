@@ -13,13 +13,10 @@ public class DaySorter {
     private static final LocalTime NOON = LocalTime.NOON;
 
     /*
-    A helper method for parseStreamGuysReport().
+    A helper method for parseStreamGuysReportByDay().
     
     Generates two text files, YYYY-MM-DD_AM.txt and YYYY-MM-DD_PM.txt, for each day that someone streamed WAMU. If files for a particular day have not been created yet, it will create the file. If the files have been created already, nothing happens.
 
-    The streams, unsorted by time, for each day will be written to these files.
-
-    Each YYYY-MM-DD_AM.txt and YYYY-MM-DD_PM.txt file then needs to be passed as an argument to a TimeSorter object, and that TimeSorter object will sort that day's streams by time.
     */
     private static void createOutputFiles(WAMUStream stream) {
         try {
@@ -36,7 +33,7 @@ public class DaySorter {
     }
 
     /*
-        A helper method for parseStreamGuysReport()
+        A helper method for parseStreamGuysReportByDay()
 
         Creates the directory, PrintedUnsortedStreamLogs, that will hold two text files for each day that WAMU was streamed - YYYY-MM-DD_AM.txt and YYYY-MM-DD_PM.txt.
         
@@ -54,9 +51,9 @@ public class DaySorter {
     }
 
     /*
-        A helper method for parseStreamGuysReport().
+        A helper method for parseStreamGuysReportByDay().
 
-        Takes a WAMUStream as an argument and sorts it into the appropriate YYYY-MM-DD_AM.txt or YYYY-MM-DD_PM.txt file, depending on whether it is before or after 12pm (noon).
+        Takes a WAMUStream as an argument and sorts it into the appropriate YYYY-MM-DD_AM.txt or YYYY-MM-DD_PM.txt file, depending on the date of the stream, and whether the stream was accessed before or after 12pm (noon).
     */
     private static void printStream(WAMUStream stream) {
 
@@ -88,9 +85,8 @@ public class DaySorter {
     /*
         Takes the name of the original Streamguys stream report as an argument. Writes that stream to the correct YYYY-MM-DD_AM.txt or YYYY-MM-DD_PM.txt file. 
         
-        Each YYYY-MM-DD_AM.txt and YYYY-MM-DD_PM.txt file then needs to be passed as an argument to a TimeSorter object, and that TimeSorter object will sort that day's streams by time.
     */
-    public static void parseStreamGuysReport(String fileName) {
+    public static void parseStreamGuysReportByDay(String fileName) {
         createPrintedUnsortedDirectory();
         
         try (Scanner scanner = new Scanner(Paths.get(fileName)).useDelimiter("\\t|\\n")) {
