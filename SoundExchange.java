@@ -21,10 +21,11 @@ public class SoundExchange {
             TimeSorter.createPrintedSortedDirectory()
 
             to create the destination file for the stream files that will be sorted by time.
-
-            //TimeSorter.createPrintedSortedDirectory();
-
         */
+
+            TimeSorter.createPrintedSortedDirectory();
+
+        
 
         /*
             4.  
