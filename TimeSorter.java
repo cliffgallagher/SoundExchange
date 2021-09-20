@@ -41,7 +41,7 @@ public class TimeSorter {
     */
     private void printLog(String fileName, ArrayList<WAMUStream> list) {
         try {
-            File logSortedByTime = new File("./PrintedSortedStreamLogs/" + fileName);
+            File logSortedByTime = new File("./PrintedSortedStreamLogs/WAMU_Streaming_Log_" + fileName);
             FileWriter fileWriter = new FileWriter(logSortedByTime);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             PrintWriter printWriter = new PrintWriter(bufferedWriter);
